@@ -18,7 +18,7 @@
 
 ## Script
 
-Introduce the GitHub Platform using the [slides](./slides.pdf).
+Introduce the GitHub Platform using the [slides](./demo.pdf).
 
 ### 1. Copilot chat (via Github.com)
 
