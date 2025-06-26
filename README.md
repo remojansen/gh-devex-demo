@@ -31,9 +31,25 @@ Open the repo in GitHub and ask copilot chat some questions about it:
 
 Run the application using a codespace.
 
+Open a terminal and run the unit test:
+
+```sh
+dotnet test
+```
+
+Run the API:
+
+```sh
+dotnet run --project .\github-platform-demo-api\github-platform-demo-api.csproj
+```
+
+
+
 Show the swagger documentation `https://localhost:XXXXXX/swagger/index.html`.
 	
 Show the existing `GetWeatherForecastAsync` endpoint `https://localhost:XXXXXX/weather/forecast?city=seville`.
+
+Open Visual Studio 2022 and run it to show that it works in both environments.
 
 ### 3. Code suggestions (from code)
 
