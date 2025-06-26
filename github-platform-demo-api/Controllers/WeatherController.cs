@@ -6,9 +6,14 @@ using github_platform_demo_domain.Models;
 namespace github_platform_demo_api.Controllers
 {
 
+    interface IWeatherController
+    {
+        Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync(string city);
+    }
+
     [ApiController]
     [Route("[controller]")]
-    public class WeatherController : ControllerBase
+    public class WeatherController : ControllerBase, IWeatherController
     {
         private readonly ILogger<WeatherController> _logger;
         private readonly IWeatherService weatherService;

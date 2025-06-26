@@ -23,7 +23,7 @@ namespace github_platform_demo_tests.Mocks
             }
         };
 
-        public static readonly WeatherForecast[] SampleHistoricalForecasts = new[]
+        public static readonly WeatherForecast[] SampleHistorical = new[]
         {
             new WeatherForecast
             {
@@ -49,7 +49,11 @@ namespace github_platform_demo_tests.Mocks
         }
         public Task<IEnumerable<WeatherForecast>> GetHistoricalWeatherAsync(string city, int month)
         {
-            return Task.FromResult<IEnumerable<WeatherForecast>>(new List<WeatherForecast>());
+            return Task.FromResult<IEnumerable<WeatherForecast>>(new List<WeatherForecast>
+            {
+                SampleHistorical[0],
+                SampleHistorical[1]
+            });
         }
     }
 }

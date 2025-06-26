@@ -6,7 +6,7 @@ namespace github_platform_demo_tests
     public class WeatherControllerTests
     {
         [Fact]
-        public async void GetWeatherForecast()
+        public async void GetWeatherForecastTest()
         {
             var logger = new Microsoft.Extensions.Logging.Abstractions.NullLogger<WeatherController>();
             var controller = new WeatherController(logger, new MockWeatherService());
@@ -19,5 +19,7 @@ namespace github_platform_demo_tests
             Assert.Equal(MockWeatherService.SampleForecasts[1].Summary, result.Last().Summary);
             Assert.Equal(MockWeatherService.SampleForecasts[1].TemperatureC, result.Last().TemperatureC);
         }
+
+
     }
 }
