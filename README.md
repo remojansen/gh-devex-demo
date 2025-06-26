@@ -11,7 +11,7 @@
 7. [Copilot chat agent mode (@workspace)](#6-copilot-chat-agent-mode-workspace)
 8. [Copilot for CLI](#7-copilot-for-cli)
 9. [Copilot chat agent mode (@github)](#8-copilot-chat-agent-mode-github)
-10. [Demo GitHub Actions](#9-demo-github-actions)
+10. [GitHub Actions](#9-github-actions)
 11. [Coding Agent](#10-coding-agent)
 12. [One platform](#11-one-platform)
 13. [GHAS](#12-ghas)
@@ -31,9 +31,23 @@ Open the repo in GitHub and ask copilot chat some questions about it:
 
 Run the application using a codespace.
 
-Show the swagger documentation `https://localhost:XXXXXX/swagger/index.html`.
+Open a terminal (in codespace) and run the unit test:
+
+```sh
+dotnet test
+```
+
+Run the API:
+
+```sh
+dotnet run --project ./github-platform-demo-api/github-platform-demo-api.csproj
+```
+
+Show the swagger documentation `https://XXXXXX.app.github.dev/swagger/index.html`.
 	
-Show the existing `GetWeatherForecastAsync` endpoint `https://localhost:XXXXXX/weather/forecast?city=seville`.
+Show the existing `GetWeatherForecastAsync` endpoint `https://XXXXXX.app.github.dev/weather/forecast?city=seville`.
+
+Open Visual Studio 2022 and run it (`http://localhost:XXXXXX/swagger/index.html`) to show that it works in both environments.
 
 ### 3. Code suggestions (from code)
 
@@ -107,20 +121,29 @@ gh copilot suggest "commit and push my changes to branch copilot-demo"
 Ask the github agent to open a PR:
 
 ```sh
-@github create a new PR from branch copilot-demo to main. This PR implements issue #1.
+@github create a new PR from branch copilot-demo to main. Link the PR to issue #2.
 ```
 
 Explain that you can create more agents with MCP.
 
-### 9. Demo GitHub Actions
+### 9. GitHub Actions
 
 Show the PR build checks.
 
 ### 10. Coding Agent
 
-Assign issue #2 to the coding agent.
+Create a new issue using copilot chat:
 
-Show how the PR is created.
+```sh
+Draft an issue to add a new endpoint (HTTP GET /Weather/Alerts?city={city}) to the WeatherForecastController that
+returns weather alerts. The issue should describe the steps to implement the endpoint.
+Including changes to the domain model, the controller, mocks and unit tests. 
+For simplicity the WeatherService should use hard coded data instead of reading from a real database.
+```
+
+Assign the new issue to the coding agent.
+
+Show how the PR is created (Copilot session details).
 
 ### 11. One platform
 
