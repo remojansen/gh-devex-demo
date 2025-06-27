@@ -11,4 +11,8 @@
     <ProjectReference Include="..\github-platform-demo-domain\github-platform-demo-domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.5.0" />
+  </ItemGroup>
+
 </Project>
