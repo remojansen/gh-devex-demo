@@ -9,6 +9,7 @@ namespace github_platform_demo_api.Controllers
     interface IWeatherController
     {
         Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync(string city);
+        Task<IActionResult> GetWeatherAlertsAsync(string city);
     }
 
     [ApiController]
@@ -31,6 +32,25 @@ namespace github_platform_demo_api.Controllers
         public async Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync([FromQuery] string city)
         {   
             return await weatherService.GetWeatherForecastAsync(city);
+        }
+
+        [HttpGet("Alerts", Name = "GetWeatherAlerts")]
+        public async Task<IActionResult> GetWeatherAlertsAsync([FromQuery] string city)
+        {
+            if (string.IsNullOrWhiteSpace(city))
+            {
+                return BadRequest("City parameter is required and cannot be empty.");
+            }
+
+            try
+            {
+                var alerts = await weatherService.GetWeatherAlertsAsync(city);
+                return Ok(alerts);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An error occurred while retrieving weather alerts.");
+            }
         }
 
     }

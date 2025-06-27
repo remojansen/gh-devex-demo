@@ -6,5 +6,6 @@ namespace github_platform_demo_domain.Services
     {
         Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync(string city);
         Task<IEnumerable<WeatherForecast>> GetHistoricalWeatherAsync(string city, int month);
+        Task<IEnumerable<WeatherAlert>> GetWeatherAlertsAsync(string city);
     }
 }
