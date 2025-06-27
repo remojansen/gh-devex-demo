@@ -104,6 +104,8 @@ Demo the @workspace agent:
 @workspace Add a unit test for WeatherController.GetHistoricalWeatherAsync
 ```
 
+> :warning: For this step you might need to switch to your personal account if the repo is in your personal account. Otherwise Copilot chat will tell you that it lacks permissions to create the new PR.
+
 ### 7. Copilot for CLI
 
 Ask copilot CLI how to create a new branch:
