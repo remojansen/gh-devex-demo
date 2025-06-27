@@ -35,5 +35,16 @@ namespace github_platform_demo_dal
             })
             .ToArray();
         }
+
+        public async Task<WeatherForecast> CreateWeatherForecastAsync(WeatherForecast weatherForecast)
+        {
+            await Task.Delay(1000);
+            using (var context = new WeatherContext())
+            {
+                context.WeatherForecast.Add(weatherForecast);
+                await context.SaveChangesAsync();
+            }
+            return weatherForecast;
+        }
     }
 }

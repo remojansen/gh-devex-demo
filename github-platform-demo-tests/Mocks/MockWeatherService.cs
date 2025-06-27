@@ -55,5 +55,10 @@ namespace github_platform_demo_tests.Mocks
                 SampleHistorical[1]
             });
         }
+
+        public Task<WeatherForecast> CreateWeatherForecastAsync(WeatherForecast weatherForecast)
+        {
+            return Task.FromResult(weatherForecast);
+        }
     }
 }
