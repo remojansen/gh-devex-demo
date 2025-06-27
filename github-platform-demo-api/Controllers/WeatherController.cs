@@ -47,9 +47,8 @@ namespace github_platform_demo_api.Controllers
                 var alerts = await weatherService.GetWeatherAlertsAsync(city);
                 return Ok(alerts);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogError(ex, "Error retrieving weather alerts for city: {City}", city);
                 return StatusCode(500, "An error occurred while retrieving weather alerts.");
             }
         }
